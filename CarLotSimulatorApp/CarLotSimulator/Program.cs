@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 
 namespace CarLotSimulator
 {
@@ -6,10 +8,52 @@ namespace CarLotSimulator
     {
         static void Main(string[] args)
         {
+
+
+            CarLot carLot = new CarLot();
+
+            
+
+
+            Car car1 = new Car() { Year = 2014, Make = "GMC", Model = "1500", EngineNoise = "Roar", HonkNoise = "Loud", IsDriveable = true};
+
+            carLot.ListOfCars.Add(car1);
+
+
+
+            Car car2 = new Car() { Year = 2022, Make = "Chevrolet", Model = "Colorado", EngineNoise = "Purrr", HonkNoise = "Stout", IsDriveable = true };
+
+            carLot.ListOfCars.Add(car2);
+
+
+
+            Car car3 = new Car() { Year = 1997, Make = "Ford", Model = "Explorer", EngineNoise = "None", HonkNoise = "Dead", IsDriveable = false };
+        
+            carLot.ListOfCars.Add(car3);
+
+
+            foreach (var car in carLot.ListOfCars) 
+            {
+                Console.WriteLine($"Year {car.Year} Make {car.Make} Model {car.Model}");
+                car.MakeEngineNoise(car.EngineNoise);
+                car.MakeHonkNoise(car.HonkNoise);
+                Console.WriteLine();
+                Console.WriteLine();
+                    
+
+            }
+
+
+
+
+
+            List <int> list = new List <int> ();
+            list.Add(5);
+
             //TODO
 
-            //Create a seperate class file called Car
-            //Car shall have the following properties: Year, Make, Model, EngineNoise, HonkNoise, IsDriveable
+            //Create a seperate class file called Car-DONE
+            //Car shall have the following properties: Year, Make, Model, EngineNoise, HonkNoise, IsDriveable-DONE
             //Car shall have the following methods: MakeEngineNoise(), MakeHonkNoise()
             //The methods should take one string parameter: the respective noise property
 
